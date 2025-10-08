@@ -1,0 +1,16 @@
+# List Methods
+my_list = [1, 2, 3]
+my_list.append(4)
+print("After Append:", my_list)
+
+my_list.extend([5, 6])
+print("After Extend:", my_list)
+
+my_list.insert(0, 0)
+print("After Insert:", my_list)
+
+my_list.remove(3)
+print("After Remove:", my_list)
+
+del my_list[2]
+print("After Delete Index 2:", my_list)

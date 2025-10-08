@@ -1,0 +1,17 @@
+from collections import deque
+def water_jug():
+    a,b = 4,3
+    target = 2
+    queue = deque([(0,0,[])])
+    visited = set()
+    while queue:
+        x,y,path = queue.popleft()
+        if x==target or y==target:
+            for p in path+[(x,y)]:
+                print(p)
+            return
+        if (x,y) in visited: continue
+        visited.add((x,y))
+        queue.extend([(a,y,path+[(x,y)]),(x,b,path+[(x,y)]),(0,y,path+[(x,y)]),(x,0,path+[(x,y)]),
+                     (x-min(x,b-y),y+min(x,b-y),path+[(x,y)]),(x+min(y,a-x),y-min(y,a-x),path+[(x,y)])])
+water_jug()

@@ -1,0 +1,15 @@
+def solve(board, row=0):
+    if row == 8:
+        for r in board:
+            print(" ".join("Q" if c else "." for c in r))
+        print()
+        return True
+    res = False
+    for col in range(8):
+        if all(board[i][col]==0 and abs(row-i)!=abs(col-c) for i,r in enumerate(board) for c,val in enumerate(r) if val):
+            board[row][col]=1
+            res = solve(board,row+1) or res
+            board[row][col]=0
+    return res
+
+solve([[0]*8 for _ in range(8)])

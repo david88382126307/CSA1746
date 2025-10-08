@@ -1,0 +1,12 @@
+# List Operations
+my_list = [10, 20, 30, [40, 50]]
+
+print("List:", my_list)                # Nested List
+print("Length:", len(my_list))         # Length
+print("Concatenation:", my_list + [60, 70])   # Concatenation
+print("Membership:", 20 in my_list)    # Membership
+print("Iteration:")
+for i in my_list:
+    print(i)
+print("Indexing:", my_list[2])         # Indexing
+print("Slicing:", my_list[1:3])        # Slicing

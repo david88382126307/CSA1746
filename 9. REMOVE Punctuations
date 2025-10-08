@@ -1,0 +1,6 @@
+# Remove Punctuations
+import string
+
+text = input("Enter a string: ")
+no_punct = "".join(ch for ch in text if ch not in string.punctuation)
+print("String without punctuation:", no_punct)
